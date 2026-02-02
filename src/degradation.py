@@ -5,8 +5,8 @@ class TyreDegradationModel:
         self.alpha = alpha
 
     def fit(self, data):
-        self.laps = data["lap"].values
+        self.tyre_life = data["tyre_life"].values
         return self
 
-    def predict(self):
-        return np.exp(-self.alpha * self.laps)
+    def predict(self, tyre_life):
+        return np.exp(-self.alpha * tyre_life)
